@@ -36,10 +36,13 @@ public class MMCLogger extends JavaPlugin implements Listener {
 
 	//Date now = new Date();
 	//SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+	
+	public File logFolder1 = new File(getDataFolder(), "logs/");
+	public File clogFolder1 = new File(getDataFolder(), "commandlogs/");
 
 	public File playersFolder = new File(getDataFolder(), "players");
-	public File logFolder = new File(getDataFolder(), "logs/"+ getFileDate());
-	public File clogFolder = new File(getDataFolder(), "commandlogs/"+ getFileDate());
+	public File logFolder = new File(logFolder1, getFileDate());
+	public File clogFolder = new File(clogFolder1, getFileDate());
 	
 	public File chatFile;
 	public File commandFile;
@@ -93,6 +96,12 @@ public class MMCLogger extends JavaPlugin implements Listener {
 	}
 
 	public void folderCheck() {
+		if (!clogFolder1.exists()) {
+			clogFolder1.mkdir();
+		}
+		if (!logFolder1.exists()) {
+			logFolder1.mkdir();
+		}
 		if (!playersFolder.exists()) {
 			playersFolder.mkdir();
 		}

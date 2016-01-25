@@ -4,7 +4,7 @@ description: Logs chat and commands
 main: net.moddedminecraft.mmclogger.MMCLogger
 name: MMCLogger
 startup: postworld
-version: 1.3
+version: 1.5
 permissions:
   mmclogger.notify:
     description: Players with this permission get notified when a player says anything on the chat or command notify list.
